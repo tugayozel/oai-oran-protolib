@@ -16,3 +16,7 @@ message E2_dummy_response {
     required bool result = 3;
 }
 
+message RAN_message{
+    required RAN_message_type = 1;
+    
+}
