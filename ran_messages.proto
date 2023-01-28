@@ -71,6 +71,8 @@ message ue_info_m{
     required int64 pusch_snrx10 = 12;
     required int64 pucch_snrx10 = 13;
     required int64 ul_rssi = 14;
+
+    required float rsrp = 15;
 }
 
 message ue_list_m{
