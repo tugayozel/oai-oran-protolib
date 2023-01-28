@@ -18,10 +18,10 @@ message ue_info_m{
     /// total amount of data awaiting for this UE
     required int64 num_total_bytes = 10;
 
-    required int raw_rssi = 11;
-    required int pusch_snrx10 = 12;
-    required int pucch_snrx10 = 13;
-    required uint16_t ul_rssi = 14;
+    required int64 raw_rssi = 11;
+    required int64 pusch_snrx10 = 12;
+    required int64 pucch_snrx10 = 13;
+    required int64 ul_rssi = 14;
 }
 
 message ue_list_m{
