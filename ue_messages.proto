@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+message ue_info_m{
+    int64 rnti = 1;
+    // nr mac stats
+    int64 dlsch_errors = 2;
+    int64 dlsch_total_bytes = 3;
+    int64 dlsch_current_bytes = 4;
+    int64 ulsch_errors = 5;
+    int64 ulsch_total_bytes_rx = 6;
+    int64 num_rsrp_meas = 7;
+
+    // sched control info
+    /// uplink bytes that are currently scheduled
+    int64 sched_ul_bytes = 8;
+    /// estimation of the UL buffer size
+    int64 estimated_ul_buffer = 9;
+    /// total amount of data awaiting for this UE
+    int64 num_total_bytes = 10;
+
+    int raw_rssi = 11;
+    int pusch_snrx10 = 12;
+    int pucch_snrx10 = 13;
+    uint16_t ul_rssi = 14;
+}
+
+message ue_list_m{
+  int32 connected_ues = 1;
+  repeated ue_info_m = 2;
+}
