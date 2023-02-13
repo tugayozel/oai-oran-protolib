@@ -50,29 +50,12 @@ message RAN_message{
 }
 
 message ue_info_m{
-    required int64 rnti = 1;
-    // nr mac stats
-    required int64 dlsch_errors = 2;
-    required int64 dlsch_total_bytes = 3;
-    required int64 dlsch_current_bytes = 4;
-    required int64 ulsch_errors = 5;
-    required int64 ulsch_total_bytes_rx = 6;
-    required int64 num_rsrp_meas = 7;
-
-    // sched control info
-    /// uplink bytes that are currently scheduled
-    required int64 sched_ul_bytes = 8;
-    /// estimation of the UL buffer size
-    required int64 estimated_ul_buffer = 9;
-    /// total amount of data awaiting for this UE
-    required int64 num_total_bytes = 10;
-
-    required int64 raw_rssi = 11;
-    required int64 pusch_snrx10 = 12;
-    required int64 pucch_snrx10 = 13;
-    required int64 ul_rssi = 14;
-
-    required float rsrp = 15;
+    required int32 rnti=1;
+    optional float tbs_avg_dl=2;
+    optional float tbs_avg_ul=3;
+    optional float tbs_dl_toapply=4;
+    optional float tbs_ul_toapply=5;
+    optional bool is_GBR = 6; 
 }
 
 message ue_list_m{
