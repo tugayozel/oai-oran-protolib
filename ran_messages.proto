@@ -46,11 +46,18 @@ message RAN_message{
 }
 
 message ue_info_m{
+
+    // this is to identify the ue
     required int32 rnti=1;
+
+    // specific ue's measurements (these will come from the gnb)
     optional float meas_type_1=2;
     optional float meas_type_2=3;
     optional float meas_type_3=4;
-    optional bool is_prop = 5; 
+
+    // specific ue's propoerties (these will be set by the xapp and sent to gnb)
+    optional bool prop_1 = 5;
+    optional float prop_2 = 6;
 }
 
 message ue_list_m{
