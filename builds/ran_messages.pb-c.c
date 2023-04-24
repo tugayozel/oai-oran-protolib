@@ -590,7 +590,7 @@ const ProtobufCMessageDescriptor ran_message__descriptor =
   (ProtobufCMessageInit) ran_message__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[5] =
+static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
 {
   {
     "rnti",
@@ -641,12 +641,24 @@ static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[5] =
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "is_prop",
+    "prop_1",
     5,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(UeInfoM, has_is_prop),
-    offsetof(UeInfoM, is_prop),
+    offsetof(UeInfoM, has_prop_1),
+    offsetof(UeInfoM, prop_1),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "prop_2",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FLOAT,
+    offsetof(UeInfoM, has_prop_2),
+    offsetof(UeInfoM, prop_2),
     NULL,
     NULL,
     0,             /* flags */
@@ -654,16 +666,17 @@ static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[5] =
   },
 };
 static const unsigned ue_info_m__field_indices_by_name[] = {
-  4,   /* field[4] = is_prop */
   1,   /* field[1] = meas_type_1 */
   2,   /* field[2] = meas_type_2 */
   3,   /* field[3] = meas_type_3 */
+  4,   /* field[4] = prop_1 */
+  5,   /* field[5] = prop_2 */
   0,   /* field[0] = rnti */
 };
 static const ProtobufCIntRange ue_info_m__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 5 }
+  { 0, 6 }
 };
 const ProtobufCMessageDescriptor ue_info_m__descriptor =
 {
@@ -673,7 +686,7 @@ const ProtobufCMessageDescriptor ue_info_m__descriptor =
   "UeInfoM",
   "",
   sizeof(UeInfoM),
-  5,
+  6,
   ue_info_m__field_descriptors,
   ue_info_m__field_indices_by_name,
   1,  ue_info_m__number_ranges,

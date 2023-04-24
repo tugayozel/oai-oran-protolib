@@ -128,19 +128,30 @@ struct  _RANMessage
 struct  _UeInfoM
 {
   ProtobufCMessage base;
+  /*
+   * this is to identify the ue
+   */
   int32_t rnti;
+  /*
+   * specific ue's measurements (these will come from the gnb)
+   */
   protobuf_c_boolean has_meas_type_1;
   float meas_type_1;
   protobuf_c_boolean has_meas_type_2;
   float meas_type_2;
   protobuf_c_boolean has_meas_type_3;
   float meas_type_3;
-  protobuf_c_boolean has_is_prop;
-  protobuf_c_boolean is_prop;
+  /*
+   * specific ue's propoerties (these will be set by the xapp and sent to gnb)
+   */
+  protobuf_c_boolean has_prop_1;
+  protobuf_c_boolean prop_1;
+  protobuf_c_boolean has_prop_2;
+  float prop_2;
 };
 #define UE_INFO_M__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&ue_info_m__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 
 
 struct  _UeListM
