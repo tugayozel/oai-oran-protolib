@@ -1,18 +1,14 @@
 syntax = "proto2";
 
-// import "ue_messages.proto";
-
 enum RAN_message_type{
     SUBSCRIPTION = 1;
     INDICATION_REQUEST = 2;
     INDICATION_RESPONSE = 3;
     CONTROL = 4;
-    SOMETHING_ELSE = 5;
 } 
 
 enum RAN_parameter{
     GNB_ID = 1;
-    SOMETHING = 2;
     UE_LIST = 3;
 }
 
@@ -51,11 +47,10 @@ message RAN_message{
 
 message ue_info_m{
     required int32 rnti=1;
-    optional float tbs_avg_dl=2;
-    optional float tbs_avg_ul=3;
-    optional float tbs_dl_toapply=4;
-    optional float tbs_ul_toapply=5;
-    optional bool is_GBR = 6; 
+    optional float meas_type_1=2;
+    optional float meas_type_2=3;
+    optional float meas_type_3=4;
+    optional bool is_prop = 5; 
 }
 
 message ue_list_m{
