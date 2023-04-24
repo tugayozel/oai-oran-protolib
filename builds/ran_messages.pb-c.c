@@ -590,7 +590,7 @@ const ProtobufCMessageDescriptor ran_message__descriptor =
   (ProtobufCMessageInit) ran_message__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
+static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[5] =
 {
   {
     "rnti",
@@ -605,60 +605,48 @@ static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "tbs_avg_dl",
+    "meas_type_1",
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(UeInfoM, has_tbs_avg_dl),
-    offsetof(UeInfoM, tbs_avg_dl),
+    offsetof(UeInfoM, has_meas_type_1),
+    offsetof(UeInfoM, meas_type_1),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "tbs_avg_ul",
+    "meas_type_2",
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(UeInfoM, has_tbs_avg_ul),
-    offsetof(UeInfoM, tbs_avg_ul),
+    offsetof(UeInfoM, has_meas_type_2),
+    offsetof(UeInfoM, meas_type_2),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "tbs_dl_toapply",
+    "meas_type_3",
     4,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(UeInfoM, has_tbs_dl_toapply),
-    offsetof(UeInfoM, tbs_dl_toapply),
+    offsetof(UeInfoM, has_meas_type_3),
+    offsetof(UeInfoM, meas_type_3),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "tbs_ul_toapply",
+    "is_prop",
     5,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_FLOAT,
-    offsetof(UeInfoM, has_tbs_ul_toapply),
-    offsetof(UeInfoM, tbs_ul_toapply),
-    NULL,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
-    "is_GBR",
-    6,
-    PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(UeInfoM, has_is_gbr),
-    offsetof(UeInfoM, is_gbr),
+    offsetof(UeInfoM, has_is_prop),
+    offsetof(UeInfoM, is_prop),
     NULL,
     NULL,
     0,             /* flags */
@@ -666,17 +654,16 @@ static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
   },
 };
 static const unsigned ue_info_m__field_indices_by_name[] = {
-  5,   /* field[5] = is_GBR */
+  4,   /* field[4] = is_prop */
+  1,   /* field[1] = meas_type_1 */
+  2,   /* field[2] = meas_type_2 */
+  3,   /* field[3] = meas_type_3 */
   0,   /* field[0] = rnti */
-  1,   /* field[1] = tbs_avg_dl */
-  2,   /* field[2] = tbs_avg_ul */
-  3,   /* field[3] = tbs_dl_toapply */
-  4,   /* field[4] = tbs_ul_toapply */
 };
 static const ProtobufCIntRange ue_info_m__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 6 }
+  { 0, 5 }
 };
 const ProtobufCMessageDescriptor ue_info_m__descriptor =
 {
@@ -686,7 +673,7 @@ const ProtobufCMessageDescriptor ue_info_m__descriptor =
   "UeInfoM",
   "",
   sizeof(UeInfoM),
-  6,
+  5,
   ue_info_m__field_descriptors,
   ue_info_m__field_indices_by_name,
   1,  ue_info_m__number_ranges,
@@ -744,23 +731,21 @@ const ProtobufCMessageDescriptor ue_list_m__descriptor =
   (ProtobufCMessageInit) ue_list_m__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue ran_message_type__enum_values_by_number[5] =
+static const ProtobufCEnumValue ran_message_type__enum_values_by_number[4] =
 {
   { "SUBSCRIPTION", "RAN_MESSAGE_TYPE__SUBSCRIPTION", 1 },
   { "INDICATION_REQUEST", "RAN_MESSAGE_TYPE__INDICATION_REQUEST", 2 },
   { "INDICATION_RESPONSE", "RAN_MESSAGE_TYPE__INDICATION_RESPONSE", 3 },
   { "CONTROL", "RAN_MESSAGE_TYPE__CONTROL", 4 },
-  { "SOMETHING_ELSE", "RAN_MESSAGE_TYPE__SOMETHING_ELSE", 5 },
 };
 static const ProtobufCIntRange ran_message_type__value_ranges[] = {
-{1, 0},{0, 5}
+{1, 0},{0, 4}
 };
-static const ProtobufCEnumValueIndex ran_message_type__enum_values_by_name[5] =
+static const ProtobufCEnumValueIndex ran_message_type__enum_values_by_name[4] =
 {
   { "CONTROL", 3 },
   { "INDICATION_REQUEST", 1 },
   { "INDICATION_RESPONSE", 2 },
-  { "SOMETHING_ELSE", 4 },
   { "SUBSCRIPTION", 0 },
 };
 const ProtobufCEnumDescriptor ran_message_type__descriptor =
@@ -770,28 +755,26 @@ const ProtobufCEnumDescriptor ran_message_type__descriptor =
   "RAN_message_type",
   "RANMessageType",
   "",
-  5,
+  4,
   ran_message_type__enum_values_by_number,
-  5,
+  4,
   ran_message_type__enum_values_by_name,
   1,
   ran_message_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCEnumValue ran_parameter__enum_values_by_number[3] =
+static const ProtobufCEnumValue ran_parameter__enum_values_by_number[2] =
 {
   { "GNB_ID", "RAN_PARAMETER__GNB_ID", 1 },
-  { "SOMETHING", "RAN_PARAMETER__SOMETHING", 2 },
   { "UE_LIST", "RAN_PARAMETER__UE_LIST", 3 },
 };
 static const ProtobufCIntRange ran_parameter__value_ranges[] = {
-{1, 0},{0, 3}
+{1, 0},{3, 1},{0, 2}
 };
-static const ProtobufCEnumValueIndex ran_parameter__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex ran_parameter__enum_values_by_name[2] =
 {
   { "GNB_ID", 0 },
-  { "SOMETHING", 1 },
-  { "UE_LIST", 2 },
+  { "UE_LIST", 1 },
 };
 const ProtobufCEnumDescriptor ran_parameter__descriptor =
 {
@@ -800,11 +783,11 @@ const ProtobufCEnumDescriptor ran_parameter__descriptor =
   "RAN_parameter",
   "RANParameter",
   "",
-  3,
+  2,
   ran_parameter__enum_values_by_number,
-  3,
+  2,
   ran_parameter__enum_values_by_name,
-  1,
+  2,
   ran_parameter__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
