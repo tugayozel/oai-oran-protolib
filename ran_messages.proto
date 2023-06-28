@@ -12,6 +12,11 @@ enum RAN_parameter{
     UE_LIST = 3;
 }
 
+enum RAN_mcs_type{
+    SIXTEEN_QAM = 1;
+    SIXTYFOUR_QAM = 2;
+}
+
 message RAN_param_map_entry{
     required RAN_parameter key = 1;
     oneof value{
@@ -56,7 +61,7 @@ message ue_info_m{
     optional float meas_type_3=4;
 
     // specific ue's propoerties (these will be set by the xapp and sent to gnb)
-    optional bool prop_1 = 5;
+    optional RAN_mcs_type prop_1 = 5;
     optional float prop_2 = 6;
 }
 

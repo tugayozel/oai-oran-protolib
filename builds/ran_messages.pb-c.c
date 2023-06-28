@@ -644,10 +644,10 @@ static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
     "prop_1",
     5,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_BOOL,
+    PROTOBUF_C_TYPE_ENUM,
     offsetof(UeInfoM, has_prop_1),
     offsetof(UeInfoM, prop_1),
-    NULL,
+    &ran_mcs_type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -802,5 +802,33 @@ const ProtobufCEnumDescriptor ran_parameter__descriptor =
   ran_parameter__enum_values_by_name,
   2,
   ran_parameter__value_ranges,
+  NULL,NULL,NULL,NULL   /* reserved[1234] */
+};
+static const ProtobufCEnumValue ran_mcs_type__enum_values_by_number[2] =
+{
+  { "SIXTEEN_QAM", "RAN_MCS_TYPE__SIXTEEN_QAM", 1 },
+  { "SIXTYFOUR_QAM", "RAN_MCS_TYPE__SIXTYFOUR_QAM", 2 },
+};
+static const ProtobufCIntRange ran_mcs_type__value_ranges[] = {
+{1, 0},{0, 2}
+};
+static const ProtobufCEnumValueIndex ran_mcs_type__enum_values_by_name[2] =
+{
+  { "SIXTEEN_QAM", 0 },
+  { "SIXTYFOUR_QAM", 1 },
+};
+const ProtobufCEnumDescriptor ran_mcs_type__descriptor =
+{
+  PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
+  "RAN_mcs_type",
+  "RAN_mcs_type",
+  "RANMcsType",
+  "",
+  2,
+  ran_mcs_type__enum_values_by_number,
+  2,
+  ran_mcs_type__enum_values_by_name,
+  1,
+  ran_mcs_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
